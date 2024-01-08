@@ -193,17 +193,36 @@ Następnie uruchomiłem CronJob'a przy pomocy poniższego polecenia:
 
 # Krok 4A
 
+W tym kroku należało sprawdzić czy opracowana aplikacja jest dostępna z zewnątrz klastra Minikube, wykorzystując skonfigurowany
+zasób Ingress.
+
+Najpierw uruchomiłem minikube tunnel:
+
 
 ![](/4A_1.png)
+
+
+Później sprawdziłem poprawność konfiguracji Ingress:
 
 
 ![](/4A_2.png)
 
 
+Następnie dodałem wpis w /etc/hosts
+
+
 ![](/4A_3.png)
 
 
+Wynik http://zad2.lab:
+
+
 ![](/4A_4.png)
+
+
+# Krok 4B:
+
+
 
 
 ![](/4B_1.png)
