@@ -168,14 +168,30 @@ Obraz [zad2gitops](https://hub.docker.com/r/patston/zad2gitops) na DockerHub:
 
 # Krok 3B
 
+W tym koroku należało utworzyć manifest obiektu CronJob o nazwie stepcd, który ma co dwie minuty klonować
+zawartość repozytorium ConfigRepo do katalagu tymczasowgo (u mnie /tmp) w systemie plików kontenera. Również
+ma za zadanie co dwie minuty uruchamiać manifesty, które znajdują się w katalogu /tmp, a więc w ten sposób
+inicjalizuje proces aktualizacji. Aktualizacja realizowana jest z uprawnieniami konta gitops.
+
+Poniżej znajduje się manifest obiektu CronJob o nazwie stepcd:
+
 
 ![](/3B_1.png)
+
+
+Następnie przed uruchomieniem powyższego CronJob'a wykonałem poniższe polecenia:
 
 
 ![](/3B_2.png)
 
 
+Następnie uruchomiłem CronJob'a przy pomocy poniższego polecenia:
+
+
 ![](/3B_3.png)
+
+
+# Krok 4A
 
 
 ![](/4A_1.png)
