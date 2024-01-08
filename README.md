@@ -1,7 +1,7 @@
 # Krok 1A
 
 W tym kroku należało utworzyć repozytorium [SourceRepo](https://github.com/patston/SourceRepo). W tym repozytorium miały znajdować się pliki źródłowe aplikacji webowej.
-Strona miała zawierać takie informacje jak: imię i nazwisko oraz numer wersji aplikacji. W SourceRepo miał znajdować się
+Strona miała zawierać takie informacje jak: imię i nazwisko oraz numer wersji aplikacji. W [SourceRepo](https://github.com/patston/SourceRepo) miał znajdować się
 również Dockerfile, który pozwala na zbudowanie obrazu Docker tej aplikacji.
 
 Przed rozpoczęciem realizacji tego kroku zainstalowałem GitHub CLI za pomocą następującego polecenia:
@@ -33,13 +33,13 @@ powyżej przedstawionej strony webowej:
 ![](/1A_5.png)
 
 
-Przy pomocy GitHub CLI utworzyłem repozytorium SourceRepo:
+Przy pomocy GitHub CLI utworzyłem repozytorium [SourceRepo](https://github.com/patston/SourceRepo):
 
 
 ![](/1A_6.png)
 
 
-Zrobiłem pierwszy commit i wykonałem push do repozytorium SourceRepo:
+Zrobiłem pierwszy commit i wykonałem push do repozytorium [SourceRepo](https://github.com/patston/SourceRepo):
 
 
 ![](/1A_7.png)
@@ -74,13 +74,13 @@ Następnie utworzyłem usługę dostępu zewnętrznego Ingress:
 ![](/1B_3.png)
 
 
-Ostatecznie utworzyłem repozytorium ConfigRepo przy pomocy GitHub CLI:
+Ostatecznie utworzyłem repozytorium [ConfigRepo](https://github.com/patston/ConfigRepo) przy pomocy GitHub CLI:
 
 
 ![](/1B_4.png)
 
 
-Zrobiłem pierwszy commit i wykonałem push do repozytorium ConfigRepo:
+Zrobiłem pierwszy commit i wykonałem push do repozytorium [ConfigRepo](https://github.com/patston/ConfigRepo):
 
 
 ![](/1B_5.png)
@@ -88,7 +88,7 @@ Zrobiłem pierwszy commit i wykonałem push do repozytorium ConfigRepo:
 
 # Krok 2A i 2B
 
-W tych krokach należało w ramach repozytorium SourceRepo utworzyć plik .github/workflows/zad2lab10.yml, który
+W tych krokach należało w ramach repozytorium [SourceRepo](https://github.com/patston/SourceRepo) utworzyć plik .github/workflows/zad2lab10.yml, który
 pozwoli na zbudowanie obrazu dla wybranych architektur sprzętowych (ang. mulWarch images), nadanie tag-u i 
 przesłanie obrazu do swojego, publicznego repo na DockerHub oraz odpowiednią modyfikację manifestów yaml 
 na repozytorium Config repo.
@@ -102,14 +102,14 @@ Najpierw utworzyłem katalog .github/workflows/
 Następnie utworzyłem plik zad2lab10.yml w powyższym katalogu. Zawiera on dwa zadania (ang. jobs), czyli dockerCI i
 kubernetesCI. 
 DockerCI wykorzystuje następujące moduły actions, które są dostępnie w systemie action marketplace:
-- actions/checkout - skojarzenie workflow z SourceRepo,
+- actions/checkout - skojarzenie workflow z [SourceRepo](https://github.com/patston/SourceRepo),
 - docker/setup-qemu-action - instalacja QEMU,
 - docker/setup-buildxaction - instalacja silnika budowy obrazów Buildx,
 - docker/login-action - logowanie na koncie DockerHub,
 - docker/build-push-action - budowę obrazu Docker dla architektur amd64 oraz arm64, nadanie właściwej
 nazwy obrazu i przesłanie tego wieloarchitekturowego obrazu na wskazanekonto na DockerHub.
 
-Do zalogowania się na DockerHub wykorzystałem Actions secrets dla repozytorium SourceRepo. Warto wspomnieć, że
+Do zalogowania się na DockerHub wykorzystałem Actions secrets dla repozytorium [SourceRepo](https://github.com/patston/SourceRepo). Warto wspomnieć, że
 GitHub Actions workflow wykorzystuje najnowszą wersję systemu Ubuntu oraz pozwala na uruchomienie na podstawie
 decyzji użytkownika (workflow_dispatch). Dodatkowo wykorzystałem inputs.tag, dzięki czemu podczas uruchamiania
 tego workflow, zostaniemy poproszeni o podanie wersji aplikacji.
@@ -118,15 +118,15 @@ tego workflow, zostaniemy poproszeni o podanie wersji aplikacji.
 ![](/2B_1.png)
 
 
-KubernetesCI modyfikuje zawartość manifestów w ConfigRepo, tak aby zawierał nowy obraz Docker (nową wersję aplikacji).
-Wykorzystuje w tym celu edytor sed. Ten job również zawiera skojarzenie z repozytorium, tym razem z ConfigRepo.
-Tutaj również skorzystałem z Actions secrets, aby podać token do repozytorium ConfigRepo.
+KubernetesCI modyfikuje zawartość manifestów w [ConfigRepo](https://github.com/patston/ConfigRepo), tak aby zawierał nowy obraz Docker (nową wersję aplikacji).
+Wykorzystuje w tym celu edytor sed. Ten job również zawiera skojarzenie z repozytorium, tym razem z [ConfigRepo](https://github.com/patston/ConfigRepo).
+Tutaj również skorzystałem z Actions secrets, aby podać token do repozytorium [ConfigRepo](https://github.com/patston/ConfigRepo).
 
 
 ![](/2B_2.png)
 
 
-Ostatecznie wykonałem push do repozytorium SourceRepo:
+Ostatecznie wykonałem push do repozytorium [SourceRepo](https://github.com/patston/SourceRepo):
 
 
 ![](/2B_3.png)
@@ -154,7 +154,7 @@ Zalogowałem się na DockerHub i wykonałem push tego obrazu:
 ![](/3A_3.png)
 
 
-Ostatecznie wykonałem push tego pliku Dockerfile do SourceRepo:
+Ostatecznie wykonałem push tego pliku Dockerfile do [SourceRepo](https://github.com/patston/SourceRepo):
 
 
 ![](/3A_4.png)
@@ -169,7 +169,7 @@ Obraz [zad2gitops](https://hub.docker.com/r/patston/zad2gitops) na DockerHub:
 # Krok 3B
 
 W tym koroku należało utworzyć manifest obiektu CronJob o nazwie stepcd, który ma co dwie minuty klonować
-zawartość repozytorium ConfigRepo do katalagu tymczasowgo (u mnie /tmp) w systemie plików kontenera. Również
+zawartość repozytorium [ConfigRepo](https://github.com/patston/ConfigRepo) do katalagu tymczasowgo (u mnie /tmp) w systemie plików kontenera. Również
 ma za zadanie co dwie minuty uruchamiać manifesty, które znajdują się w katalogu /tmp, a więc w ten sposób
 inicjalizuje proces aktualizacji. Aktualizacja realizowana jest z uprawnieniami konta gitops.
 
@@ -230,7 +230,7 @@ Najpierw zmieniłem wersję aplikacji w pliku index.html:
 ![](/4B_1.png)
 
 
-Później wykonałem push do SourceRepo:
+Później wykonałem push do [SourceRepo](https://github.com/patston/SourceRepo):
 
 
 ![](/4B_2.png)
