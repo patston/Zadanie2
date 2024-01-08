@@ -254,7 +254,7 @@ Wynik dostępności aplikacji pod adresem zad2.lab w przeglądarce po poprawnej 
 ![](/4B_5.png)
 
 
-Obraz aplikacji na DockerHub:
+Obraz aplikacji na [DockerHub](https://hub.docker.com/r/patston/web-app):
 
 
 ![](/4B_6.png)
