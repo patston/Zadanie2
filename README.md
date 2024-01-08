@@ -126,22 +126,47 @@ Tutaj również skorzystałem z Actions secrets, aby podać token do repozytoriu
 ![](/2B_2.png)
 
 
+Ostatecznie wykonałem push do repozytorium SourceRepo:
+
+
 ![](/2B_3.png)
+
+
+# Krok 3A
+
+W tym kroku należało opracować obraz o nazwie [zad2gitops](https://hub.docker.com/r/patston/zad2gitops).
+Obraz bazuje na najnowszej wersji systemu alpine oraz zawiera git, curl oraz kubectl.
+Plik Dockerfile został przedstawiony poniżej:
 
 
 ![](/3A_1.png)
 
 
+Następnie zbudowałem ten obraz:
+
+
 ![](/3A_2.png)
+
+
+Zalogowałem się na DockerHub i wykonałem push tego obrazu:
 
 
 ![](/3A_3.png)
 
 
+Ostatecznie wykonałem push tego pliku Dockerfile do SourceRepo:
+
+
 ![](/3A_4.png)
 
 
+Obraz [zad2gitops](https://hub.docker.com/r/patston/zad2gitops) na DockerHub:
+
+
 ![](/3A_5.png)
+
+
+# Krok 3B
 
 
 ![](/3B_1.png)
