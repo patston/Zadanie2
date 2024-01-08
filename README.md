@@ -1,9 +1,8 @@
 # Krok 1A
 
-W tym kroku należało utworzyć repozytorium SourceRepo. W tym repozytorium miały znajdować się pliki źródłowe aplikacji webowej.
+W tym kroku należało utworzyć repozytorium [SourceRepo](https://github.com/patston/SourceRepo). W tym repozytorium miały znajdować się pliki źródłowe aplikacji webowej.
 Strona miała zawierać takie informacje jak: imię i nazwisko oraz numer wersji aplikacji. W SourceRepo miał znajdować się
 również Dockerfile, który pozwala na zbudowanie obrazu Docker tej aplikacji.
-
 
 Przed rozpoczęciem realizacji tego kroku zainstalowałem GitHub CLI za pomocą następującego polecenia:
 
