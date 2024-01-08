@@ -86,10 +86,29 @@ Zrobiłem pierwszy commit i wykonałem push do repozytorium ConfigRepo:
 ![](/1B_5.png)
 
 
-# Krok 2A
+# Krok 2A i 2B
+
+W tych krokach należało w ramach repozytorium SourceRepo utworzyć plik .github/workflows/zad2lab10.yml, który
+pozwoli na zbudowanie obrazu dla wybranych architektur sprzętowych (ang. mulWarch images), nadanie tag-u i 
+przesłanie obrazu do swojego, publicznego repo na DockerHub oraz odpowiednią modyfikację manifestów yaml 
+na repozytorium Config repo.
+
+Najpierw utworzyłem katalog .github/workflows/
 
 
 ![](/2A_1.png)
+
+
+Następnie utworzyłem plik zad2lab10.yml w powyższym katalogu. Zawiera on dwa zadania (ang. jobs), czyli dockerCI i
+kubernetesCI. 
+DockerCI wykorzystuje następujące moduły actions, które są dostępnie w systemie action marketplace:
+- actions/checkout - skojarzenie workflow z SourceRepo,
+- docker/setup-qemu-action - instalacja QEMU,
+- docker/setup-buildxaction - instalacja silnika budowy obrazów Buildx,
+- docker/login-action - logowanie na koncie DockerHub,
+- docker/build-push-action - budowę obrazu Docker dla architektur amd64 oraz arm64, nadanie właściwej
+nazwy obrazu i przesłanie tego wieloarchitekturowego obrazu na wskazanekonto na DockerHub.
+
 
 
 ![](/2B_1.png)
