@@ -109,9 +109,18 @@ DockerCI wykorzystuje następujące moduły actions, które są dostępnie w sys
 - docker/build-push-action - budowę obrazu Docker dla architektur amd64 oraz arm64, nadanie właściwej
 nazwy obrazu i przesłanie tego wieloarchitekturowego obrazu na wskazanekonto na DockerHub.
 
+Do zalogowania się na DockerHub wykorzystałem Actions secrets dla repozytorium SourceRepo. Warto wspomnieć, że
+GitHub Actions workflow wykorzystuje najnowszą wersję systemu Ubuntu oraz pozwala na uruchomienie na podstawie
+decyzji użytkownika (workflow_dispatch). Dodatkowo wykorzystałem inputs.tag, dzięki czemu podczas uruchamiania
+tego workflow, zostaniemy poproszeni o podanie wersji aplikacji.
 
 
 ![](/2B_1.png)
+
+
+KubernetesCI modyfikuje zawartość manifestów w ConfigRepo, tak aby zawierał nowy obraz Docker (nową wersję aplikacji).
+Wykorzystuje w tym celu edytor sed. Ten job również zawiera skojarzenie z repozytorium, tym razem z ConfigRepo.
+Tutaj również skorzystałem z Actions secrets, aby podać token do repozytorium ConfigRepo.
 
 
 ![](/2B_2.png)
