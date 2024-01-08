@@ -214,7 +214,7 @@ Następnie dodałem wpis w /etc/hosts
 ![](/4A_3.png)
 
 
-Wynik http://zad2.lab:
+Wynik dostępności aplikacji pod adresem zad2.lab w przeglądarce:
 
 
 ![](/4A_4.png)
@@ -222,23 +222,39 @@ Wynik http://zad2.lab:
 
 # Krok 4B:
 
+W tym kroku należało sprawdzić poprawność dostępności aplikacji po aktualizacji.
 
+Najpierw zmieniłem wersję aplikacji w pliku index.html:
 
 
 ![](/4B_1.png)
 
 
+Później wykonałem push do SourceRepo:
+
+
 ![](/4B_2.png)
+
+
+Następnie przy pomocy GitHub CLI uruchomiłem workflow z tagiem 1.1:
 
 
 ![](/4B_3.png)
 
 
+Później sprawdziłem poprawność konfiguracji używając polecenia kubectl get all:
+
+
 ![](/4B_4.png)
+
+
+Wynik dostępności aplikacji pod adresem zad2.lab w przeglądarce po poprawnej aktualizacji:
 
 
 ![](/4B_5.png)
 
 
-![](/4B_6.png)
+Obraz aplikacji na DockerHub:
 
+
+![](/4B_6.png)
