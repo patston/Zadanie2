@@ -50,20 +50,43 @@ Zrobiłem pierwszy commit i wykonałem push do repozytorium SourceRepo:
 
 # Krok 1B
 
+W tym kroku należało utworzyć repozytorium [ConfigRepo](https://github.com/patston/ConfigRepo). W tym repozytorium
+miały znjadować się pliki manifestów yaml, które mają za zadanie utworzenie Deploymentu, Service typu NodePort oraz
+Ingress.
+
+Najpierw utworzyłem Deployment, na bazie opracowanego obrazu w kroku 1A. Deployment posiada 4 repliki,
+dopuszcza w trakcie wykownywania aktualizacji jednoczesnej pracy maksymalnie 5 pod-ów w ramach aplikacji oraz
+ogranicza minimalną liczbę działających podów do dwóch:
+
 
 ![](/1B_1.png)
+
+
+Potem utworzyłęm usługę Service typu NodePort dla tej aplikacji:
 
 
 ![](/1B_2.png)
 
 
+Następnie utworzyłem usługę dostępu zewnętrznego Ingress:
+
+
 ![](/1B_3.png)
+
+
+Ostatecznie utworzyłem repozytorium ConfigRepo przy pomocy GitHub CLI:
 
 
 ![](/1B_4.png)
 
 
+Zrobiłem pierwszy commit i wykonałem push do repozytorium ConfigRepo:
+
+
 ![](/1B_5.png)
+
+
+# Krok 2A
 
 
 ![](/2A_1.png)
